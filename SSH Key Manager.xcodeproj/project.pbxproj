@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15C834D019C174A100AF9F50 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C834CF19C174A100AF9F50 /* Cocoa.framework */; };
+		15C834DA19C174A100AF9F50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15C834D819C174A100AF9F50 /* InfoPlist.strings */; };
+		15C834DC19C174A100AF9F50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C834DB19C174A100AF9F50 /* main.m */; };
+		15C834E019C174A100AF9F50 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 15C834DE19C174A100AF9F50 /* Credits.rtf */; };
+		15C834E319C174A100AF9F50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C834E219C174A100AF9F50 /* AppDelegate.m */; };
+		15C834E619C174A100AF9F50 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C834E419C174A100AF9F50 /* MainMenu.xib */; };
+		15C834E819C174A100AF9F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C834E719C174A100AF9F50 /* Images.xcassets */; };
+		15C834EF19C174A100AF9F50 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C834EE19C174A100AF9F50 /* XCTest.framework */; };
+		15C834F019C174A100AF9F50 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C834CF19C174A100AF9F50 /* Cocoa.framework */; };
+		15C834F819C174A100AF9F50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15C834F619C174A100AF9F50 /* InfoPlist.strings */; };
+		15C834FA19C174A100AF9F50 /* SSH_Key_ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C834F919C174A100AF9F50 /* SSH_Key_ManagerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15C834F119C174A100AF9F50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15C834C419C174A100AF9F50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15C834CB19C174A100AF9F50;
+			remoteInfo = "SSH Key Manager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15C834CC19C174A100AF9F50 /* SSH Key Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSH Key Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C834CF19C174A100AF9F50 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		15C834D219C174A100AF9F50 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		15C834D319C174A100AF9F50 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		15C834D419C174A100AF9F50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		15C834D719C174A100AF9F50 /* SSH Key Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSH Key Manager-Info.plist"; sourceTree = "<group>"; };
+		15C834D919C174A100AF9F50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15C834DB19C174A100AF9F50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		15C834DD19C174A100AF9F50 /* SSH Key Manager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSH Key Manager-Prefix.pch"; sourceTree = "<group>"; };
+		15C834DF19C174A100AF9F50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		15C834E119C174A100AF9F50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		15C834E219C174A100AF9F50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		15C834E519C174A100AF9F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		15C834E719C174A100AF9F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		15C834ED19C174A100AF9F50 /* SSH Key ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SSH Key ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C834EE19C174A100AF9F50 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		15C834F519C174A100AF9F50 /* SSH Key ManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSH Key ManagerTests-Info.plist"; sourceTree = "<group>"; };
+		15C834F719C174A100AF9F50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15C834F919C174A100AF9F50 /* SSH_Key_ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSH_Key_ManagerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15C834C919C174A100AF9F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C834D019C174A100AF9F50 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C834EA19C174A100AF9F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C834F019C174A100AF9F50 /* Cocoa.framework in Frameworks */,
+				15C834EF19C174A100AF9F50 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15C834C319C174A100AF9F50 = {
+			isa = PBXGroup;
+			children = (
+				15C834D519C174A100AF9F50 /* SSH Key Manager */,
+				15C834F319C174A100AF9F50 /* SSH Key ManagerTests */,
+				15C834CE19C174A100AF9F50 /* Frameworks */,
+				15C834CD19C174A100AF9F50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		15C834CD19C174A100AF9F50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15C834CC19C174A100AF9F50 /* SSH Key Manager.app */,
+				15C834ED19C174A100AF9F50 /* SSH Key ManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15C834CE19C174A100AF9F50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15C834CF19C174A100AF9F50 /* Cocoa.framework */,
+				15C834EE19C174A100AF9F50 /* XCTest.framework */,
+				15C834D119C174A100AF9F50 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15C834D119C174A100AF9F50 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15C834D219C174A100AF9F50 /* AppKit.framework */,
+				15C834D319C174A100AF9F50 /* CoreData.framework */,
+				15C834D419C174A100AF9F50 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		15C834D519C174A100AF9F50 /* SSH Key Manager */ = {
+			isa = PBXGroup;
+			children = (
+				15C834E119C174A100AF9F50 /* AppDelegate.h */,
+				15C834E219C174A100AF9F50 /* AppDelegate.m */,
+				15C834E419C174A100AF9F50 /* MainMenu.xib */,
+				15C834E719C174A100AF9F50 /* Images.xcassets */,
+				15C834D619C174A100AF9F50 /* Supporting Files */,
+			);
+			path = "SSH Key Manager";
+			sourceTree = "<group>";
+		};
+		15C834D619C174A100AF9F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15C834D719C174A100AF9F50 /* SSH Key Manager-Info.plist */,
+				15C834D819C174A100AF9F50 /* InfoPlist.strings */,
+				15C834DB19C174A100AF9F50 /* main.m */,
+				15C834DD19C174A100AF9F50 /* SSH Key Manager-Prefix.pch */,
+				15C834DE19C174A100AF9F50 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		15C834F319C174A100AF9F50 /* SSH Key ManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				15C834F919C174A100AF9F50 /* SSH_Key_ManagerTests.m */,
+				15C834F419C174A100AF9F50 /* Supporting Files */,
+			);
+			path = "SSH Key ManagerTests";
+			sourceTree = "<group>";
+		};
+		15C834F419C174A100AF9F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15C834F519C174A100AF9F50 /* SSH Key ManagerTests-Info.plist */,
+				15C834F619C174A100AF9F50 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15C834CB19C174A100AF9F50 /* SSH Key Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15C834FD19C174A100AF9F50 /* Build configuration list for PBXNativeTarget "SSH Key Manager" */;
+			buildPhases = (
+				15C834C819C174A100AF9F50 /* Sources */,
+				15C834C919C174A100AF9F50 /* Frameworks */,
+				15C834CA19C174A100AF9F50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SSH Key Manager";
+			productName = "SSH Key Manager";
+			productReference = 15C834CC19C174A100AF9F50 /* SSH Key Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		15C834EC19C174A100AF9F50 /* SSH Key ManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15C8350019C174A100AF9F50 /* Build configuration list for PBXNativeTarget "SSH Key ManagerTests" */;
+			buildPhases = (
+				15C834E919C174A100AF9F50 /* Sources */,
+				15C834EA19C174A100AF9F50 /* Frameworks */,
+				15C834EB19C174A100AF9F50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15C834F219C174A100AF9F50 /* PBXTargetDependency */,
+			);
+			name = "SSH Key ManagerTests";
+			productName = "SSH Key ManagerTests";
+			productReference = 15C834ED19C174A100AF9F50 /* SSH Key ManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15C834C419C174A100AF9F50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "C Fairweather";
+				TargetAttributes = {
+					15C834EC19C174A100AF9F50 = {
+						TestTargetID = 15C834CB19C174A100AF9F50;
+					};
+				};
+			};
+			buildConfigurationList = 15C834C719C174A100AF9F50 /* Build configuration list for PBXProject "SSH Key Manager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15C834C319C174A100AF9F50;
+			productRefGroup = 15C834CD19C174A100AF9F50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15C834CB19C174A100AF9F50 /* SSH Key Manager */,
+				15C834EC19C174A100AF9F50 /* SSH Key ManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15C834CA19C174A100AF9F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C834DA19C174A100AF9F50 /* InfoPlist.strings in Resources */,
+				15C834E819C174A100AF9F50 /* Images.xcassets in Resources */,
+				15C834E019C174A100AF9F50 /* Credits.rtf in Resources */,
+				15C834E619C174A100AF9F50 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C834EB19C174A100AF9F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C834F819C174A100AF9F50 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15C834C819C174A100AF9F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C834E319C174A100AF9F50 /* AppDelegate.m in Sources */,
+				15C834DC19C174A100AF9F50 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C834E919C174A100AF9F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C834FA19C174A100AF9F50 /* SSH_Key_ManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15C834F219C174A100AF9F50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15C834CB19C174A100AF9F50 /* SSH Key Manager */;
+			targetProxy = 15C834F119C174A100AF9F50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15C834D819C174A100AF9F50 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15C834D919C174A100AF9F50 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		15C834DE19C174A100AF9F50 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15C834DF19C174A100AF9F50 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		15C834E419C174A100AF9F50 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15C834E519C174A100AF9F50 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		15C834F619C174A100AF9F50 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15C834F719C174A100AF9F50 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15C834FB19C174A100AF9F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		15C834FC19C174A100AF9F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		15C834FE19C174A100AF9F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSH Key Manager/SSH Key Manager-Prefix.pch";
+				INFOPLIST_FILE = "SSH Key Manager/SSH Key Manager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		15C834FF19C174A100AF9F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSH Key Manager/SSH Key Manager-Prefix.pch";
+				INFOPLIST_FILE = "SSH Key Manager/SSH Key Manager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		15C8350119C174A100AF9F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SSH Key Manager.app/Contents/MacOS/SSH Key Manager";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSH Key Manager/SSH Key Manager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SSH Key ManagerTests/SSH Key ManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		15C8350219C174A100AF9F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SSH Key Manager.app/Contents/MacOS/SSH Key Manager";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSH Key Manager/SSH Key Manager-Prefix.pch";
+				INFOPLIST_FILE = "SSH Key ManagerTests/SSH Key ManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15C834C719C174A100AF9F50 /* Build configuration list for PBXProject "SSH Key Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C834FB19C174A100AF9F50 /* Debug */,
+				15C834FC19C174A100AF9F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15C834FD19C174A100AF9F50 /* Build configuration list for PBXNativeTarget "SSH Key Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C834FE19C174A100AF9F50 /* Debug */,
+				15C834FF19C174A100AF9F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		15C8350019C174A100AF9F50 /* Build configuration list for PBXNativeTarget "SSH Key ManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C8350119C174A100AF9F50 /* Debug */,
+				15C8350219C174A100AF9F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15C834C419C174A100AF9F50 /* Project object */;
+}

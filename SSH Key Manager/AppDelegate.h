@@ -7,9 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSWindow_SKM.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate>{
+    int sliderValue;
+}
 
-@property (assign) IBOutlet NSWindow *window;
+@property (readwrite, assign) int sliderValue;
+@property (assign) IBOutlet NSWindow_SKM *window;
+@property (strong) NSMutableArray *arraySSHConfigItems;
+
+-(void)writeToSSHFile;
 
 @end

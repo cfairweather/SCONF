@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServerInstance.h"
 
-@interface ServerPasswordManager : NSObject
+@interface SSHKeyBackupManager : NSObject
 
-+(OSStatus)saveOrUpdateServerPassword:(NSString*)password forServer:(ServerInstance*)serverInstance;
-+(NSString*)getPasswordForServer:(ServerInstance*)serverInstance;
-+(OSStatus)deletePasswordForServer:(ServerInstance*)serverInstance;
 
 @end

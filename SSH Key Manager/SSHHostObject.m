@@ -80,6 +80,7 @@
         }else if ([comps[0] isEqualToString:@"IdentityFile"]){
             if(comps.count >= 2){
                 //                  Convert ~
+                // Keep the ~ and only translate when checking for file existence
                 self.sshKeyPath = comps[1];
                 self.sshKeyEnabled = YES;
             }

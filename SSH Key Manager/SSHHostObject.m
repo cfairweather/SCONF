@@ -156,7 +156,13 @@
     }
     
     if(self.sshKeyEnabled && self.sshKeyPath && ![self.sshKeyPath isEqualToString:@""]){
-        if([[NSFileManager defaultManager] fileExistsAtPath:self.sshKeyPath]){
+        NSString *path = self.sshKeyPath;
+        NSRange search = [path rangeOfString:@"~"];
+        
+        if(search.location==0){
+            path = [path stringByReplacingCharactersInRange:search withString:NSHomeDirectory()];
+        }
+        if([[NSFileManager defaultManager] fileExistsAtPath:path]){
             [hostStringNew appendFormat:@"  IdentityFile %@\n", self.sshKeyPath];
         }else{
 //            Give some kind of file not found error

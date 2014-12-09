@@ -17,6 +17,20 @@
 @interface SSHKeyBackupManager ()
 
 @end
+
+@implementation SSHKeyBackupManager
+
++(NSString *)sshKeyFetchBackup:(NSString *)withUID{
+    
+    return nil;
+}
+
++(BOOL)sshKeySetBackup:(NSString *)withUID andKey:(NSString *)key{
+    
+    return NO;
+}
+@end
+
 //
 //static BOOL hasUnlockedKeychainYet;
 //

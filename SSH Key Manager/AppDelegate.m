@@ -94,7 +94,7 @@
 
     NSString *fileSSHConfig = [NSHomeDirectory() stringByAppendingString: @"/.ssh/config"];
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:fileSSHConfig];
-    
+    [fileHandle truncateFileAtOffset:0]; //Allows us to overwrite all of the file!
     [fileHandle writeData:[stringToFile dataUsingEncoding:NSStringEncodingConversionAllowLossy]];
     [fileHandle closeFile];
 }

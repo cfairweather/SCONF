@@ -10,5 +10,8 @@
 
 @interface SSHKeyBackupManager : NSObject
 
++(NSString*)sshKeyFetchBackup:(NSString*)withUID;
+
++(BOOL)sshKeySetBackup:(NSString*)withUID andKey:(NSString*)key;
 
 @end

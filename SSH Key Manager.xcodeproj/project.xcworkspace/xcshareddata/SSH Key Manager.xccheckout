@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FF682735-DC4F-4B8D-AF6B-7FB0E2298326</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SSH Key Manager</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>533463D05713C580C21DCCC0186C658B62E4ED85</key>
+		<string>https://github.com/cfairweather/SCONF.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SSH Key Manager.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>533463D05713C580C21DCCC0186C658B62E4ED85</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cfairweather/SCONF.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>533463D05713C580C21DCCC0186C658B62E4ED85</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>533463D05713C580C21DCCC0186C658B62E4ED85</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SSH%20Key%20Manager</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -13,6 +13,8 @@
     BOOL saved;
     int lastShoSelected;
     NSString*attemptChangeHost;
+    
+    BOOL sshHostWindowMode_NEW;
 }
 
 @property (weak) AppDelegate *appDelegate;
@@ -80,7 +82,7 @@
     [self enableAllButtons:YES];
     
     self.textFieldHostName.stringValue = self.shoSelected.hostName;
-    self.textFieldUsername.stringValue = self.shoSelected.hostUsername;
+    self.textFieldUsername.stringValue = (self.shoSelected.hostUsername) ? self.shoSelected.hostUsername : @"";
     self.buttonPortDefault.state = (self.shoSelected.altPortEnabled)? NSOffState : NSOnState;
     self.textFieldPort.stringValue = [NSString stringWithFormat:@"%d",(self.shoSelected.altPortEnabled)? self.shoSelected.altPort : 22];
 
@@ -167,6 +169,34 @@
 }
 
 
+
+//Used for confirming the user wants to delete a record
+-(void)actionPromptDeleteConfirm:(id)sender{
+    
+    NSMutableString* hostMutableString = self.shoSelected.hostString;
+    
+    [self.popUpButtonHost removeItemWithTitle:self.shoSelected.hostLabel];
+    [self.dictionarySSHHosts removeObjectForKey:self.shoSelected.hostLabel];
+    [self.appDelegate.arraySSHConfigItems removeObject:hostMutableString];
+    [self actionLogConfigFile:sender];
+    
+    
+    if (self.dictionarySSHHosts.count > 0) {
+        //        Select 1st item;
+        [self.popUpButtonHost selectItemAtIndex:0];
+        [self selectHost:[self.popUpButtonHost itemTitleAtIndex:0]];
+    }
+    [self actionPromptDeleteCancel:sender];
+}
+
+-(void)actionPromptDeleteCancel:(id)sender{
+    [NSApp stopModal];
+    [self.windowPromptDelete orderOut: nil];
+    [[NSApplication sharedApplication] endSheet:self.windowPromptDelete returnCode:NSOKButton];
+    
+}
+
+
 -(void)enableAllButtons:(BOOL) enabled{
     self.buttonHostSettings.enabled = enabled;
     self.buttonOpenInTerminal.enabled = enabled;
@@ -198,6 +228,7 @@
 
 - (IBAction)actionHostSettings:(id)sender {
 //    Show dropdown menu to edit Host Label
+    sshHostWindowMode_NEW=NO;
     self.textFieldSSHHost.stringValue = self.shoSelected.hostLabel;
     [self.windowHostSettings setDefaultButtonCell:[self.buttonHostSettingsSave cell]];
     [self beginSheet:self.windowHostSettings completionHandler:NULL];
@@ -206,22 +237,49 @@
 
 - (IBAction)actionSaveSSHHostNameChange:(id)sender {
 //    Can only save if new hostlabel doesn't exist and is not blank
-    if((![[self.textFieldSSHHost.stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""] &&
+    if (sshHostWindowMode_NEW){
+        if((![[self.textFieldSSHHost.stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""] &&
             [self.dictionarySSHHosts objectForKey:[self.textFieldSSHHost.stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]] == nil
-        )
-       || [self.textFieldSSHHost.stringValue isEqualToString:self.shoSelected.hostLabel]){
-        
-        [self.dictionarySSHHosts removeObjectForKey:self.shoSelected.hostLabel];
-        self.shoSelected.hostLabel = self.textFieldSSHHost.stringValue;
-        [[self.popUpButtonHost selectedItem] setTitle:self.shoSelected.hostLabel];
-        [self.dictionarySSHHosts setObject:self.shoSelected forKey:self.shoSelected.hostLabel];
-        
-        
-        [self actionLogConfigFile:nil];
-        [self actionCancelSSHHostSettings:sender];
-        saved=YES;
+            )){
+            
+            NSMutableString *mString = [[NSString stringWithFormat:@"Host %@\n  HostName %@.local",self.textFieldSSHHost.stringValue, self.textFieldSSHHost.stringValue] mutableCopy];
+            [self.appDelegate.arraySSHConfigItems addObject:mString];
+            SSHHostObject *shoNew = [[SSHHostObject alloc] initWithHostString:mString];
+            
+            
+            [self.dictionarySSHHosts setObject:shoNew forKey:shoNew.hostLabel];
+            [self.popUpButtonHost addItemWithTitle:shoNew.hostLabel];
+            
+            
+            [self actionLogConfigFile:nil];
+            [self actionCancelSSHHostSettings:sender];
+            NSMenuItem *lastPopUpItem = self.popUpButtonHost.itemArray[self.popUpButtonHost.itemArray.count-1];
+            
+            [self.popUpButtonHost selectItem:lastPopUpItem];
+            [self selectHost:shoNew.hostLabel];
+            [self.textFieldHostName becomeFirstResponder];
+            saved=YES;
+        }else{
+            NSBeep();
+        }
     }else{
-        NSBeep();
+        if((![[self.textFieldSSHHost.stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""] &&
+            [self.dictionarySSHHosts objectForKey:[self.textFieldSSHHost.stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]] == nil
+            )
+           || [self.textFieldSSHHost.stringValue isEqualToString:self.shoSelected.hostLabel]){
+            
+            [self.dictionarySSHHosts removeObjectForKey:self.shoSelected.hostLabel];
+            self.shoSelected.hostLabel = self.textFieldSSHHost.stringValue;
+            [[self.popUpButtonHost selectedItem] setTitle:self.shoSelected.hostLabel];
+            [self.dictionarySSHHosts setObject:self.shoSelected forKey:self.shoSelected.hostLabel];
+            
+            
+            [self actionLogConfigFile:nil];
+            [self actionCancelSSHHostSettings:sender];
+            saved=YES;
+        }else{
+            NSBeep();
+        }
     }
 }
 
@@ -234,11 +292,18 @@
 }
 
 - (IBAction)actionHostAdd:(id)sender {
-//    Show dropdown to pick name and hostname. Creates blank (empty) host item
+    //    Show dropdown to pick name and hostname. Creates blank (empty) host item
+    sshHostWindowMode_NEW=YES;
+    self.textFieldSSHHost.stringValue = @"";
+    [self.windowHostSettings setDefaultButtonCell:[self.buttonHostSettingsSave cell]];
+    [self beginSheet:self.windowHostSettings completionHandler:NULL];
 }
 
 - (IBAction)actionHostRemove:(id)sender {
-//    Remove from base array of items as wel
+//    Remove from base array of items as well
+    
+    [self.windowPromptDelete setDefaultButtonCell:[self.buttonPromptDeleteCancel cell]];
+    [self beginSheet:self.windowPromptDelete completionHandler:NULL];
 }
 
 - (IBAction)actionHostNameChanged:(id)sender {

@@ -50,9 +50,13 @@
 
 //Window Prompt Save
 @property (weak) IBOutlet NSWindow *windowPromptSave;
+@property (weak) IBOutlet NSWindow *windowPromptDelete;
+@property (weak) IBOutlet NSButton *buttonPromptDeleteCancel;
 @property (weak) IBOutlet NSButton *buttonPromptSave;
 - (IBAction)actionPromptSave:(id)sender;
 - (IBAction)actionPromptCancel:(id)sender;
+- (IBAction)actionPromptDeleteCancel:(id)sender;
+- (IBAction)actionPromptDeleteConfirm:(id)sender;
 
 //Section Main
 - (IBAction)actionHostChanged:(id)sender;

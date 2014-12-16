@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+
 @interface SSHHostObject : NSObject
+
 @property (strong, atomic) NSMutableString* hostString;
 
 @property (strong, nonatomic) NSString *hostLabel;
@@ -32,6 +36,10 @@
 @property (nonatomic)  BOOL portMapReversed;
 
 @property (strong, nonatomic) NSMutableDictionary *manualOptions;
+
+
++(NSDictionary*)kSSHCONFIG_INFO;
++(NSArray*)kSSHCONFIG_KEYWORDS;
 
 
 -(id)initWithHostString:(NSMutableString*)hostStringReference;

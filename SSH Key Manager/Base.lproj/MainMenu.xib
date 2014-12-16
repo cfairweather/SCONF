@@ -367,7 +367,7 @@
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkg-nN-9ud">
                         <rect key="frame" x="386" y="525" width="40" height="32"/>
-                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2oy-6z-KoA">
+                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2oy-6z-KoA">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -508,7 +508,7 @@
                             </connections>
                         </buttonCell>
                     </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-mf-Gtb">
+                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-mf-Gtb">
                         <rect key="frame" x="294" y="310" width="170" height="18"/>
                         <buttonCell key="cell" type="check" title="Backup key to Keychain" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="Wkt-LQ-cO4">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -555,11 +555,14 @@
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
-                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="U3z-sl-dbj">
+                                            <comboBoxCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" identifier="comboboxOption" buttonBordered="NO" usesDataSource="YES" numberOfVisibleItems="5" id="aya-ol-ut6">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="QvC-M9-y7g" id="n4K-Eh-V5D"/>
+                                                </connections>
+                                            </comboBoxCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
                                         <tableColumn width="314" minWidth="40" maxWidth="1000" id="HPc-Qg-7PM">
@@ -568,11 +571,14 @@
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
-                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="Vxu-U7-Fj7">
+                                            <comboBoxCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" identifier="comboboxValue" buttonBordered="NO" completes="NO" numberOfVisibleItems="5" id="wZx-Dc-JwD">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>Item 3</string>
+                                                </objectValues>
+                                            </comboBoxCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
                                     </tableColumns>
@@ -596,7 +602,7 @@
                     </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FzF-Cx-amY">
                         <rect key="frame" x="22" y="144" width="103" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Manual Options" id="c94-EN-Jk7">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Other Options" id="c94-EN-Jk7">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -704,6 +710,26 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSX-Md-OIi">
+                        <rect key="frame" x="408" y="139" width="23" height="23"/>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zgf-eo-VxT">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="actionManualOptionAdd:" target="QvC-M9-y7g" id="Vt3-QF-HMu"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AuX-mf-nwx">
+                        <rect key="frame" x="439" y="139" width="23" height="23"/>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mU0-J9-sLm">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="actionManualOptionRemove:" target="QvC-M9-y7g" id="SAY-du-bBd"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>
@@ -712,6 +738,8 @@
                 <outlet property="buttonHostSettings" destination="1KC-bB-taJ" id="Kto-0d-OYy"/>
                 <outlet property="buttonHostSettingsSave" destination="U4a-Ye-npc" id="SbU-Gc-xdM"/>
                 <outlet property="buttonLogLevelDefault" destination="1GJ-Bu-tKI" id="LS5-mh-HWk"/>
+                <outlet property="buttonManualOptionAdd" destination="GSX-Md-OIi" id="rbr-6c-FZV"/>
+                <outlet property="buttonManualOptionRemove" destination="AuX-mf-nwx" id="anH-0L-olf"/>
                 <outlet property="buttonOpenInTerminal" destination="eVA-fz-Dqx" id="ycu-4t-3Ry"/>
                 <outlet property="buttonPortDefault" destination="375-nx-rpq" id="WK8-T8-bPs"/>
                 <outlet property="buttonPortForwardingEnabled" destination="zth-JF-evw" id="dmT-2i-nM5"/>
@@ -743,7 +771,7 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1636" y="101" width="416" height="116"/>
-            <rect key="screenRect" x="1440" y="-112" width="1920" height="1080"/>
+            <rect key="screenRect" x="1440" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="jOg-oG-QtM">
                 <rect key="frame" x="0.0" y="0.0" width="416" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -795,7 +823,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1636" y="213" width="416" height="116"/>
-            <rect key="screenRect" x="1440" y="-112" width="1920" height="1080"/>
+            <rect key="screenRect" x="1440" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="A1Y-HH-ulL">
                 <rect key="frame" x="0.0" y="0.0" width="416" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -839,7 +867,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1636" y="213" width="416" height="116"/>
-            <rect key="screenRect" x="1440" y="-112" width="1920" height="1080"/>
+            <rect key="screenRect" x="1440" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="rtZ-Jm-Cul">
                 <rect key="frame" x="0.0" y="0.0" width="416" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>

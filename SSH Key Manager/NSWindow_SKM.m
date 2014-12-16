@@ -28,6 +28,7 @@
 -(void)applicationReady{
     saved = YES;
     self.appDelegate = [[NSApplication sharedApplication] delegate];
+    
     [self populatePopupMenu];
     
     self.tableViewManualOptions.dataSource=self;
@@ -322,6 +323,10 @@
 
 - (IBAction)actionPortDefaultChanged:(id)sender {
     self.textFieldPort.enabled = ([(NSButton*)sender state]==NSOnState) ? NO : YES;
+    [self.textFieldPort becomeFirstResponder];
+    if ([(NSButton*)sender state]==NSOnState) {
+        self.textFieldPort.stringValue=@"22";
+    }
 }
 
 - (IBAction)actionLogLevelSlider:(id)sender {
@@ -447,6 +452,12 @@
     self.shoSelected.portMapTo   = [self.textFieldPortForwardingTo stringValue];
     saved=NO;
 }
+- (IBAction)actionManualOptionAdd:(id)sender {
+}
+
+- (IBAction)actionManualOptionRemove:(id)sender {
+}
+
 - (IBAction)actionLabelsChanged:(id)sender {
 //    Who knows
 }
@@ -540,4 +551,19 @@
 - (IBAction)actionMenuSave:(id)sender {
     [self actionLogConfigFile:self];
 }
+
+- (NSInteger)numberOfItemsInComboBoxCell:(NSComboBoxCell *)comboBoxCell{
+    NSLog(@"obj:%@", [comboBoxCell description]);
+//    NSLog(@"id:%@", [comboBoxCell identifier]);
+//    if([[comboBoxCell identifier] isEqualToString:@"comboboxOption"]){
+        return [[[SSHHostObject kSSHCONFIG_INFO] allKeys] count];
+//    }else{
+//        return 0;
+//    }
+}
+
+- (id)comboBoxCell:(NSComboBoxCell *)aComboBoxCell objectValueForItemAtIndex:(NSInteger)index{
+    return [[SSHHostObject kSSHCONFIG_KEYWORDS] objectAtIndex:index];
+}
+
 @end

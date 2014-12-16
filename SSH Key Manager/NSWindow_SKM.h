@@ -81,6 +81,10 @@
 - (IBAction)actionPortForwardingToChanged:(id)sender;
 
 //Section Other
+@property (weak) IBOutlet NSButton *buttonManualOptionRemove;
+@property (weak) IBOutlet NSButton *buttonManualOptionAdd;
+- (IBAction)actionManualOptionAdd:(id)sender;
+- (IBAction)actionManualOptionRemove:(id)sender;
 - (IBAction)actionLabelsChanged:(id)sender;
 - (IBAction)actionTableViewChanged:(id)sender;
 - (IBAction)actionLogConfigFile:(id)sender;

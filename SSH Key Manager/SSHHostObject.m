@@ -8,6 +8,7 @@
 
 #import "SSHHostObject.h"
 
+
 @interface SSHHostObject ()
 @property BOOL hasInit;
 @property NSString *originalString;
@@ -121,7 +122,9 @@
         }else {
             
             NSArray * newArr = [comps subarrayWithRange:NSMakeRange(1, comps.count-1)];
-            [self.manualOptions setObject:[newArr componentsJoinedByString:@" "] forKey:comps[0]];
+            if(![[comps[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""]){
+                [self.manualOptions setObject:[newArr componentsJoinedByString:@" "] forKey:comps[0]];
+            }
             
         }
         
@@ -279,5 +282,46 @@
     logLevelChanged=llc;
     [self updateHostString];
 }
+
+
+
++(NSDictionary*)kSSHCONFIG_INFO{
+    static NSDictionary *inst = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        inst=@{
+               @"Whore":[NSNull null],
+               @"AddressFamily":    @[@"any", @"inet", @"inet6"],
+               @"BatchMode":        @[@"no", @"yes"],
+               @"BindAddress":      @[@"yes", @"no"],
+               @"ChallengeResponseAuthentication": @[@"yes", @"no"],
+               @"CheckHostIP":      @[@"yes", @"no"],
+               @"Cipher":           @[@"blowfish", @"3des", @"des"],
+               @"Ciphers":          [NSNull null],//@[@"3des-cbc", @"aes128-cbc", @"aes192-cbc", @"aes256-cbc", @"aes128-ctr", @"aes192-ctr", @"aes256-ctr", @"arcfour128", @"arcfour256", @"arcfour", @"blowfish-cbc", @"cast128-cbc"],
+               @"Compression":      @[@"no", @"yes"],
+               @"CompressionLevel": @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],
+               @"ConnectionAttempts": @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"],
+               @"ControlMaster":    @[@"no", @"yes"],
+               @"ControlPath":      @[@"%h_%p_%r"],
+               @"DynamicForward":   [NSNull null],
+               @"EnableSSHKeysign": @[@"no", @"yes"],
+               
+               
+               };
+    });
+    return inst;
+}
+
++(NSArray*)kSSHCONFIG_KEYWORDS{
+    static NSArray *inst = nil;
+    static dispatch_once_t onceTokenK;
+    
+    dispatch_once(&onceTokenK, ^{
+        inst=[[[SSHHostObject kSSHCONFIG_INFO] allKeys]sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    });
+    
+    return inst;
+}
+
 
 @end
